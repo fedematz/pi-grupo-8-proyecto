@@ -1,0 +1,28 @@
+.header{
+display: flex;
+background-color: rgba(66, 20, 20, 0.178);
+height: 80px;
+align-items: center;
+box-sizing: border-box;
+}
+.fotologo{
+height: 70px;
+display: flex;
+margin: auto;
+
+
+}
+.listaheader{
+list-style-type: none;
+display: flex;
+padding: 0;
+margin: 0;
+flex-direction: column;
+justify-content: space-between;
+margin-top: 0px;
+justify-content: flex-start;
+}
+
+.buscador{
+
+}
