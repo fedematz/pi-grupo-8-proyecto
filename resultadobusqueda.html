@@ -6,22 +6,55 @@
     <title>Resultdo de busqueda</title>
     <link rel="stylesheet" href="./css/style.css">
 </head>
-<body>
-    <header class="header">
-        <!-- Formulario de búsqueda -->
-        <form class="buscador" action="busqueda.php" method="get">
-            <label for="busqueda">Buscar:</label>
-            <input type="text" id="busqueda" name="q" placeholder="Escribe tu búsqueda aquí" required>
-            <button type="submit">Buscar</button> </form>
-            
-        <img class="fotologo" src="../pi-grupo-8-proyecto/img/logo iyf.png" alt="foto de logo">
-            
-        <ul class="listaheader">
-           <li><a class="linkslista" href="./home.html">HOME</a></li>
-           <li><a class="linkslista" href="./favoritos.html">FAVORITOS</a></li>
-           <li><a class="linkslista" href="./generos.html">GÉNEROS</a></li>
-        </ul>
-        
-    </header>
+<body class="body">
+
+    <!-- header -->
+   <header class="header">
+
+       <!-- Formulario de búsqueda -->
+       <section>
+           <form class="buscador">
+               <input type="text" placeholder="Escribe tu búsqueda aquí">
+               <button type="submit">Buscar</button>
+           </form>
+       </section>
+
+        <!--foto logo -->
+       <section>
+           <a href="./home.html">
+               <img class="fotologo" src="../pi-grupo-8-proyecto/img/logo nuevo.jpg" alt="foto de logo">
+           </a>
+       </section>  
+
+        <!-- lista home genero favorito  -->
+       <section>
+           <ul class="listaheader">
+               <li class="liheader"><a class="linkslista" href="./home.html">HOME</a></li> 
+               <li class="liheader"><a class="linkslista" href="./favoritos.html">FAVORITOS</a></li> 
+               <li class="liheader"><a class="linkslista" href="./generos.html">GÉNEROS</a></li>
+           </ul>
+       </section>
+           
+   </header>
+
+   <main>
+
+   </main>
+
+    <!-- footer -->
+   <footer class="footer">
+
+       <!-- nuestros nombres -->
+       <section>
+       <p class="nombresnuestros">FEDERICO MATZ E INÉS SERÉ</p>
+       </section>
+       
+       <!-- logo digital house -->
+       <section>
+       <img class="fotodigitalhouse" src="./img/logo digital house.png" alt="Foto digital">
+       </section>
+
+   </footer>
+
 </body>
 </html>
