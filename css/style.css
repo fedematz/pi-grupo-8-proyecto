@@ -1,28 +1,72 @@
-.header{
-display: flex;
-background-color: rgba(66, 20, 20, 0.178);
-height: 80px;
-align-items: center;
-box-sizing: border-box;
-}
-.fotologo{
-height: 70px;
-display: flex;
-margin: auto;
-
-
-}
-.listaheader{
-list-style-type: none;
-display: flex;
-padding: 0;
-margin: 0;
-flex-direction: column;
-justify-content: space-between;
-margin-top: 0px;
-justify-content: flex-start;
+.body {
+    margin: 0px;
+    padding: 0px;
 }
 
-.buscador{
+/* --------- HEADER --------- */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(0, 0, 0);
+    height: 80px;
+    color: white;
+    padding: 0px 40px;
+}
 
+.fotologo {
+    display:flex;
+    height: 80px;
+}
+
+.listaheader {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    padding: 0px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+.liheader {
+    margin: 7px;
+}
+
+
+.linkslista {
+    text-decoration: none;
+    color:white;
+}
+
+/* --------- HEADER --------- */
+/* --------- BORRAR DSP --------- */
+
+main {
+    height: 80vh;
+}
+
+
+/* --------- FOOTER --------- */
+
+.footer {
+    display: flex;
+    background-color: rgb(0, 0, 0);
+    height: 80px;
+    justify-content: space-between;
+    padding: 0px 40px;
+    align-items: center;
+}
+
+
+.fotodigitalhouse {
+    display: flex;
+    align-content: flex-end;
+    height: 70px;
+    
+
+}
+
+.nombresnuestros {
+    color: white;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+    
 }
