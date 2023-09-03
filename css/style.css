@@ -93,3 +93,32 @@
 .fotobarbie {
     height: 250px;
 }
+
+.listadetallegenero{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    justify-content: center;
+}
+
+.sectionpeliculas{
+    display: flex;
+    flex-direction: row;
+}
+
+.sectionseries{
+    display: flex;
+    flex-direction: row;
+}
+
+.seriesypeliculas{
+    color: red;
+}
+
+.fotosillon{
+    width: 40%;
+}
+
+.titulospeliculas{
+    font-size: 20px;
+}
