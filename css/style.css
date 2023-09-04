@@ -122,3 +122,35 @@
 .titulospeliculas{
     font-size: 20px;
 }
+
+.detalle{
+    background-color: rgba(0, 0, 1, 0.876);
+    color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin: 0px;
+    display: flex;
+    padding-left: 475px;
+    flex-direction: column;
+}
+
+.logosfav{
+    display: flex;
+    list-style: none;
+    color: white;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+    
+    
+.carteleradetalle {
+    width: 100%;
+}
+    
+    
+.sectiondetalle{
+    width: 30vw;
+    background-color: rgba(128, 128, 128, 0.305);
+    flex-direction: column;
+    padding: 20px;
+}
+    
