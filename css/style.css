@@ -91,7 +91,7 @@
 }
 
 .fotobarbie {
-    height: 250px;
+    height: 300px;
 }
 
 .listadetallegenero{
@@ -113,6 +113,7 @@
 
 .seriesypeliculas{
     color: red;
+    margin: 10px;
 }
 
 .fotosillon{
@@ -121,6 +122,7 @@
 
 .titulospeliculas{
     font-size: 20px;
+    padding: 10px 0px 0px 10px;
 }
 
 .detalle{
@@ -140,8 +142,8 @@
     flex-direction: row;
     justify-content: space-evenly;
 }
-    
-    
+
+
 .carteleradetalle {
     width: 100%;
 }
@@ -153,4 +155,32 @@
     flex-direction: column;
     padding: 20px;
 }
-    
+
+.sifavoritos{
+    color: white;
+    text-decoration: none;
+}
+
+.barbiefavoritos{
+    margin: 0px 40px 0px 0px
+}
+
+.paraverenfamilia {
+    color: white;
+    text-decoration: none;
+}
+
+.barbieresultadossimilares {
+    display: flex;
+    flex-direction: column;
+}
+
+.newbarbie{
+    display: flex;
+    flex-direction: row;
+}
+
+.fotonewbarbie{
+    height: 250px;
+}
+

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>detalle pelicula</title>
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
 </head>
 
 <body class="body">
@@ -15,8 +16,8 @@
 
         <!-- Formulario de búsqueda -->
         <section>
-            <form class="buscador">
-                <input type="text" placeholder="Escribe tu búsqueda aquí">
+            <form action="./resultadobusqueda.html" method="get">
+                <input type="text" placeholder="Escribe tu búsqueda aquí" value="">
                 <button type="submit">Buscar</button>
             </form>
         </section>
@@ -44,18 +45,24 @@
         <section class="sectiondetalle">
             <img class="carteleradetalle" src="./img/barbie.jpeg" alt="fotobarbie">
             <h1>Barbie</h1>
+            
             <ul class="logosfav">
                 <li><i class="fa-solid fa-heart"></i></li>
                 <li><i class="fa-solid fa-play"></i></li>
                 <li><i class="fa-solid fa-clock"></i></li>
             </ul>
-
+        
 
             <p>2023|1hs 54min</p>
             <p>Fecha de estreno: 20 de Julio de 2023</p>
-            <p>Género: animación y aventuras</p>
+            <p>Género: <a class="paraverenfamilia" href="./detallegenero.html">Para ver en familia</a></p>
             <p>Barbie, la icónica muñeca, cobra vida en una película llena de aventuras donde viaja a mundos mágicos y
                 se embarca en emocionantes aventuras para salvar el día.</p>
+            <form action="./favoritos.html" method="get">
+                    <label for="favoritos"> ¿Desea agregar la pelicula a favoritos?</label>
+                    <a class="sifavoritos" href="./favoritos.html"><input type="radio" name="fav" id="laPelicula" value="Si"><span>Si</span></a>
+                    <input type="radio" name="fav" id="laPelicula" value="No"><span>No</span>
+            </form>
         </section>
 
 
@@ -72,7 +79,7 @@
 
         <!-- logo digital house -->
         <section>
-            <img class="fotodigitalhouse" src="./img/logo digital house.png" alt="Foto digital">
+            <a href="https://www.digitalhouse.com/ar" target="_blank"><img class="fotodigitalhouse" src="./img/logo digital house.png" alt="Foto digital" ></a>
         </section>
 
     </footer>
