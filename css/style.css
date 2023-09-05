@@ -18,7 +18,7 @@
     display:flex;
     height: 80px;
 }
-
+/* --------- ul (padre de li) --------- */
 .listaheader {
     list-style-type: none;
     display: flex;
@@ -27,11 +27,12 @@
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
 
+/* --------- home favoritos y genero --------- */
 .liheader {
     margin: 7px;
 }
 
-
+/* --------- links de la lista de arriba --------- */
 .linkslista {
     text-decoration: none;
     color:white;
@@ -39,30 +40,6 @@
 
 /* --------- HEADER --------- */
 
-
-
-/* --------- FOOTER --------- */
-
-.footer {
-    display: flex;
-    background-color: rgb(0, 0, 0);
-    height: 80px;
-    justify-content: space-between;
-    padding: 0px 40px;
-    align-items: center;
-}
-
-
-.fotodigitalhouse {
-    display: flex;
-    align-content: flex-end;
-    height: 70px;
-}
-
-.nombresnuestros {
-    color: white;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; 
-}
 
 /* --------- MAIN --------- */
 .main {
@@ -73,7 +50,7 @@
     justify-content: center;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;   
 }
-
+/* -- la sección de las 5 películas de barbie, está en todas menos detallepelicula y generos --- */
 .peliculas { 
     display: flex;
     flex-direction: row;
@@ -82,50 +59,47 @@
     justify-content: flex-start;
     
 }
-
+/* -- es cada cuadrante con la cartelera y el título barbie, aparece en todas menos en detallepelicula y generos -- */
 .article {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 0px 20px;
 }
-
+/* -- la foto de la cartelera de barbie -- */
 .fotobarbie {
     height: 300px;
 }
-
-.listadetallegenero{
+/* -- es para que cuando toques un genero en generos.html te redireccione a detallegenero -- */
+.listadetallegenero {
     text-decoration: none;
     color: white;
     font-size: 20px;
     justify-content: center;
 }
-
-.sectionpeliculas{
+/* -- abarca todas las palabras de generos en generos.html -- */
+.sectionpeliculas {
     display: flex;
     flex-direction: row;
 }
-
-.sectionseries{
+/* -- abarca todas las palabras de generos en generos.html pero versión series -- */
+.sectionseries {
     display: flex;
     flex-direction: row;
 }
-
-.seriesypeliculas{
+/* -- son los títulos de genero.html -- */
+.seriesypeliculas {
     color: red;
     margin: 10px;
 }
 
-.fotosillon{
-    width: 40%;
-}
-
-.titulospeliculas{
+/* -- los títulos de home tipo el mas populares -- */
+.titulospeliculas {
     font-size: 20px;
     padding: 10px 0px 0px 10px;
 }
-
-.detalle{
+/* -- todo el main de detallepelícula.html -- */
+.detalle {
     background-color: rgba(0, 0, 1, 0.876);
     color: white;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -135,7 +109,8 @@
     flex-direction: column;
 }
 
-.logosfav{
+/* -- los tres iconos de detallepelicula.html -- */
+.logosfav {
     display: flex;
     list-style: none;
     color: white;
@@ -143,44 +118,144 @@
     justify-content: space-evenly;
 }
 
-
+/* -- la cartelera de barbie en detallepelícula.html -- */
 .carteleradetalle {
     width: 100%;
 }
     
-    
-.sectiondetalle{
+/* -- es todo el cuadrante de la cartelera y la descripcion en detallepelicula.html -- */  
+.sectiondetalle {
     width: 30vw;
     background-color: rgba(128, 128, 128, 0.305);
     flex-direction: column;
     padding: 20px;
 }
 
-.sifavoritos{
+/* -- es el sí del form si/no agregar a favoritos en detallepelicula.html-- */
+.sifavoritos {
     color: white;
     text-decoration: none;
 }
 
-.barbiefavoritos{
-    margin: 0px 40px 0px 0px
-}
-
+/* -- cuando apretas para ver en familia en detallepelicula.html te lleva a detallegenero.html -- */
 .paraverenfamilia {
     color: white;
     text-decoration: none;
 }
 
+
+/* -- en resultadosdebusqueda para que resultados similares quede abajo de barbie -- */
 .barbieresultadossimilares {
     display: flex;
     flex-direction: column;
 }
 
+/* -- toda la section de las pelis similares queden horizontales -- */
 .newbarbie{
     display: flex;
     flex-direction: row;
 }
 
+/* -- las fotos de las nuevas películas de barbie para modificar el tamaño de las portadas -- */
 .fotonewbarbie{
     height: 250px;
 }
 
+/* --------- FOOTER --------- */
+
+/* --------- todo el footer --------- */
+.footer {
+    display: flex;
+    background-color: rgb(0, 0, 0);
+    height: 80px;
+    justify-content: space-between;
+    padding: 0px 40px;
+    align-items: center;
+}
+
+/* --------- foto logo digital a la derecha --------- */
+.fotodigitalhouse {
+    display: flex;
+    align-content: flex-end;
+    height: 70px;
+}
+/* --------- nuestros nombres a la izquierda --------- */
+.nombresnuestros {
+    color: white;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; 
+}
+
+
+
+
+/* --------- @ MEDIA QUERIES CELULAR --------- */
+
+@media (max-width: 420px) {
+    
+    /* --------- HEADER --------- */
+    .header {
+        padding: 5px 10px;
+    }
+ 
+    /* --------- ul (padre de li) --------- */
+    .listaheader {
+        display: flex;
+        flex-direction: column;
+        font-size: 12px;
+    }
+    /* --------- HEADER --------- */
+    
+    
+    /* --------- MAIN --------- */
+    
+    h1 {
+        font-size: 20px;
+    }
+    /* -- la sección de las 5 películas de barbie, está en todas menos detallepelicula y generos --- */
+    .peliculas { 
+        display: flex;
+        flex-direction: column;
+    }
+   
+    /* -- la foto de la cartelera de barbie -- */
+    .fotobarbie {
+        height: 150px;
+    }
+   
+    /* -- abarca todas las palabras de generos en generos.html -- */
+    .sectionpeliculas {
+        display: flex;
+        flex-direction: column;
+    }
+    /* -- abarca todas las palabras de generos en generos.html pero versión series -- */
+    .sectionseries {
+        display: flex;
+        flex-direction: column;
+    }
+   
+    /* -- los títulos de home tipo el mas populares -- */
+    .titulospeliculas {
+        font-size: 15px;
+        display: flex;
+        justify-content: center;
+    }
+
+    /* -- todo el main de detallepelícula.html -- */
+    .detalle {
+        display: flex;
+        padding-left: 122px;
+        flex-direction: column;
+    }
+    
+    /* --------- FOOTER --------- */
+        
+    /* --------- foto logo digital a la derecha --------- */
+    .fotodigitalhouse {
+        height: 45px;
+    }
+
+    .newbarbie{
+        display: flex;
+        flex-direction: column;
+    }
+}
