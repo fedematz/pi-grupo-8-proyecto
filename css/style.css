@@ -210,6 +210,8 @@
     
     h1 {
         font-size: 20px;
+        display: flex;
+        justify-content: center;
     }
     /* -- la sección de las 5 películas de barbie, está en todas menos detallepelicula y generos --- */
     .peliculas { 
