@@ -1,60 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>detalle serie</title>
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
 </head>
+
 <body class="body">
 
     <!-- header -->
-   <header class="header">
+    <header class="header">
 
-       <!-- Formulario de búsqueda -->
-    <section>
-        <form action="./resultadobusqueda.html" method="get">
-            <input type="text" placeholder="Escribe tu búsqueda aquí" value="">
-            <button type="submit">Buscar</button>
-        </form>
-    </section>
+        <!-- Formulario de búsqueda -->
+        <section>
+            <form action="./resultadobusqueda.html" method="get">
+                <input type="text" placeholder="Escribe tu búsqueda aquí" value="">
+                <button type="submit">Buscar</button>
+            </form>
+        </section>
 
         <!--foto logo -->
-       <section>
-           <a href="./home.html">
-               <img class="fotologo" src="../pi-grupo-8-proyecto/img/logo nuevo.jpg" alt="foto de logo">
-           </a>
-       </section>  
+        <section>
+            <a href="./home.html">
+                <img class="fotologo" src="../pi-grupo-8-proyecto/img/logo nuevo.jpg" alt="foto de logo">
+            </a>
+        </section>
 
         <!-- lista home genero favorito  -->
-       <section>
-           <ul class="listaheader">
-               <li class="liheader"><a class="linkslista" href="./home.html">HOME</a></li> 
-               <li class="liheader"><a class="linkslista" href="./favoritos.html">FAVORITOS</a></li> 
-               <li class="liheader"><a class="linkslista" href="./generos.html">GÉNEROS</a></li>
-           </ul>
-       </section>
-           
-   </header>
+        <section>
+            <ul class="listaheader">
+                <li class="liheader"><a class="linkslista" href="./home.html">HOME</a></li>
+                <li class="liheader"><a class="linkslista" href="./favoritos.html">FAVORITOS</a></li>
+                <li class="liheader"><a class="linkslista" href="./generos.html">GÉNEROS</a></li>
+            </ul>
+        </section>
 
-   <main>
+    </header>
 
-   </main>
+    <main>
+        <main class="detalle">
+            <section class="sectiondetalle">
+                <img class="carteleradetalle" src="./img/barbie.jpeg" alt="fotobarbie">
+                <h1>Barbie</h1>
+
+                <ul class="logosfav">
+                    <li><i class="fa-solid fa-heart"></i></li>
+                    <li><i class="fa-solid fa-play"></i></li>
+                    <li><i class="fa-solid fa-clock"></i></li>
+                </ul>
+
+
+                <p>2023|1hs 54min</p>
+                <p>Fecha de estreno: 20 de Julio de 2023</p>
+                <p>Género: <a class="paraverenfamilia" href="./detallegenero.html">Para ver en familia</a></p>
+                <p>Barbie, la icónica muñeca, cobra vida en una película llena de aventuras donde viaja a mundos mágicos
+                    y
+                    se embarca en emocionantes aventuras para salvar el día.</p>
+                <form action="./favoritos.html" method="get">
+                <button type="button">Agregar a favoritos</button>
+                   
+                </form>
+            </section>
+        </main>
+
+
+
+
+
+
+    </main>
 
     <!-- footer -->
-   <footer class="footer">
+    <footer class="footer">
 
-       <!-- nuestros nombres -->
-       <section>
-       <p class="nombresnuestros">FEDERICO MATZ E INÉS SERÉ</p>
-       </section>
-       
-       <!-- logo digital house -->
-       <section>
-        <a href="https://www.digitalhouse.com/ar" target="_blank"><img class="fotodigitalhouse" src="./img/logo digital house.png" alt="Foto digital" ></a>
-       </section>
+        <!-- nuestros nombres -->
+        <section>
+            <p class="nombresnuestros">FEDERICO MATZ E INÉS SERÉ</p>
+        </section>
 
-   </footer>
+        <!-- logo digital house -->
+        <section>
+            <a href="https://www.digitalhouse.com/ar" target="_blank"><img class="fotodigitalhouse"
+                    src="./img/logo digital house.png" alt="Foto digital"></a>
+        </section>
+
+    </footer>
 
 </body>
+
 </html>
