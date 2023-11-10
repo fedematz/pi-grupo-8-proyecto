@@ -39,7 +39,7 @@ fetch(urlmasvisto)
         let documento=document.querySelector(".lomasvisto")
         for (let index = 0; index < 5; index++) {
             documento.innerHTML+=`<article class="article">
-            <a href="../pi-grupo-8-proyecto/detallepelicula.html">
+            <a href="../pi-grupo-8-proyecto/detallepelicula.html?id=${data.results[index].id}">
             <img class="fotobarbie" src="https://image.tmdb.org/t/p/w500/${data.results[index].poster_path}" alt="fotobarbie">
             </a>
             <h4 class="h4barbie">${data.results[index].title}</h4>
@@ -65,7 +65,7 @@ fetch(urlmasvalorado)
         let documento=document.querySelector(".masvaloradas")
         for (let index = 0; index < 5; index++) {
             documento.innerHTML+=`<article class="article">
-            <a href="../pi-grupo-8-proyecto/detallepelicula.html">
+            <a href="../pi-grupo-8-proyecto/detallepelicula.html?id=${data.results[index].id}">
             <img class="fotobarbie" src="https://image.tmdb.org/t/p/w500/${data.results[index].poster_path}" alt="fotobarbie">
             </a>
             <h4 class="h4barbie">${data.results[index].title}</h4>

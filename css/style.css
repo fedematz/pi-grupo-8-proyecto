@@ -85,6 +85,7 @@
     flex-direction: column;
     align-items: center;
     margin: 0px 20px;
+    width: 20%
 }
 /* -- la foto de la cartelera de barbie -- */
 .fotobarbie {
@@ -100,18 +101,22 @@
 /* -- abarca todas las palabras de generos en generos.html -- */
 .sectionpeliculas {
     display: flex;
-    flex-direction: row;
+    margin: 2px;
+    flex-direction: column;
 }
+
 /* -- abarca todas las palabras de generos en generos.html pero versión series -- */
 .sectionseries {
     display: flex;
-    flex-direction: row;
+    margin: 2px;
+    flex-direction: column;
 }
 /* -- son los títulos de genero.html -- */
 .seriesypeliculas {
     color: red;
     margin: 10px;
 }
+
 
 /* -- los títulos de home tipo el mas populares -- */
 .titulospeliculas {

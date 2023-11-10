@@ -7,8 +7,6 @@ let urldetallepelicula=`https://api.themoviedb.org/3/movie/${query}?api_key=${'e
 
 console.log(query);
 
-
-
 fetch(urldetallepelicula)
     .then(function(response){
         return response.json()
@@ -28,11 +26,16 @@ fetch(urldetallepelicula)
             </ul>
         
 
-            <p>2023|1hs 54min</p>
-            <p>Fecha de estreno: 20 de Julio de 2023</p>
-            <p>Género: <a class="paraverenfamilia" href="./detallegenero.html">Para ver en familia</a></p>
-            <p>Barbie, la icónica muñeca, cobra vida en una película llena de aventuras donde viaja a mundos mágicos y
-                se embarca en emocionantes aventuras para salvar el día.</p>
+            <p>${data.runtime} minutos</p>
+            <p>Fecha de estreno:${data.release_date}</p>
+
+            <p>Género: <a class="paraverenfamilia" href="./detallegenero.html">
+            ${data.genres}
+            
+            </a></p>
+         
+
+            <p>${data.overview}</p>
             <form action="./favoritos.html" method="get">
                 <button type="button">Agregar a favoritos</button>
             </form>`
