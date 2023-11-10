@@ -1,3 +1,4 @@
+
 .body {
     margin: 0px;
     padding: 0px;
@@ -51,7 +52,7 @@
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;   
 }
 /* -- la sección de las 5 películas de barbie, está en todas menos detallepelicula y generos --- */
-.peliculas { 
+.maspopulares { 
     display: flex;
     flex-direction: row;
     margin: 10px;
@@ -59,6 +60,25 @@
     justify-content: flex-start;
     
 }
+
+.lomasvisto { 
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+    padding: 10px;
+    justify-content: flex-start;
+    
+}
+
+.masvaloradas { 
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+    padding: 10px;
+    justify-content: flex-start;
+    
+}
+
 /* -- es cada cuadrante con la cartelera y el título barbie, aparece en todas menos en detallepelicula y generos -- */
 .article {
     display: flex;
