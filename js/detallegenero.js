@@ -9,20 +9,21 @@ fetch(urldetallegenero)
     .then(function(data){
         console.log(data)
         let documento=document.querySelector(".peliculas")
-            documento.innerHTML=`<h1></h1>
+        for (let index = 0; index < 5; index++) {
+            documento.innerHTML=`
             <section class="peliculas">
                 <!--
                 <article class="article">
-                <a href="../pi-grupo-8-proyecto/detallepelicula.html">
-                    <img class="fotobarbie" src="./img/barbie.jpeg" alt="fotobarbie">
+                <a href="../pi-grupo-8-proyecto/detallepelicula.html?id=${data.results[index].id}">
+                    <img class="fotobarbie" src="https://image.tmdb.org/t/p/w500/${data.results[index].poster_path}" alt="fotobarbie">
                 </a>
-                <h4 class="h4barbie">Barbie</h4>
+                <h4 class="h4barbie">${data.results[index].title}</h4>
                 </article>
-                </section>`
+                </section>`}
 
     })
 
     .catch(function(error){
         console.log(error);
-    })
+    }) 
 
