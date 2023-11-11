@@ -1,5 +1,8 @@
-//trabajando sobre peliculas mas populares del home 
 let api_key = "e62f099aa015b1afedfca7df020f6e6b";
+//trabajando sobre el header
+
+
+//trabajando sobre peliculas mas populares del home 
 let urlpeliculasmaspopulares=`https://api.themoviedb.org/3/movie/popular?api_key=${api_key}`
 
 fetch(urlpeliculasmaspopulares)
@@ -75,3 +78,4 @@ fetch(urlmasvalorado)
     .catch(function(error){
         console.log(error);
     })
+
