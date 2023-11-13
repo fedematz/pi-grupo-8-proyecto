@@ -43,8 +43,8 @@
     <!-- MAIN  -->
     <main class="detalle">
         <section class="sectiondetalle">
-            <img class="carteleradetalle" src="./img/barbie.jpeg" alt="fotobarbie">
-            <h1>Barbie</h1>
+            <img class="carteleradetalle" src="https://image.tmdb.org/t/p/w500/${data.poster_path}" alt="fotobarbie">
+            <h1 class="titulo">${data.title}</h1>
             
             <ul class="logosfav">
                 <li><i class="fa-solid fa-heart"></i></li>
@@ -52,14 +52,29 @@
                 <li><i class="fa-solid fa-clock"></i></li>
             </ul>
         
+            
+            <p class="min">${data.runtime} minutos</p>
+            <p class="fecha">Fecha de estreno: </p>
 
-            <p>2023|1hs 54min</p>
-            <p> </p>
-            <p>Género: <a class="paraverenfamilia" href="./detallegenero.html">Para ver en familia</a></p>
-            <p></p>
+            <p class="genero">Género: <a class="paraverenfamilia" href="./detallegenero.html">
+            
+            
+            </a></p>
+         
+
+            <p class="sinopsis">${data.overview}</p>
             <form action="./favoritos.html" method="get">
                 <button type="button">Agregar a favoritos</button>
+                <button class="recomendaciones" type="button">ver recomendaciones</button>
             </form>
+            <span class="reco"></span>
+        </section>
+
+        <section class="container-reco" style="display: none;">
+            <h2>Recomendaciones</h2>
+            <section class="recomenda">
+
+            </section>
         </section>
 
 

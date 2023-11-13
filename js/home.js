@@ -18,7 +18,8 @@ fetch(urlpeliculasmaspopulares)
             <a href="../pi-grupo-8-proyecto/detallepelicula.html?id=${data.results[index].id}">
             <img class="fotobarbie" src="https://image.tmdb.org/t/p/w500/${data.results[index].poster_path}" alt="fotobarbie">
             </a>
-            <h4 class="h4barbie">${data.results[index].title}</h4>
+            <a href="../pi-grupo-8-proyecto/detalleserie.html?id=${data.results[index].id}"><h4 class="h4barbie">${data.results[index].title}</h4></a>
+            <a href="../pi-grupo-8-proyecto/detalleserie.html?id=${data.results[index].id}"><h3 class="h4barbie">${data.results[index].release_date}</h3></a>
             </article>`}
     })
 
@@ -45,7 +46,8 @@ fetch(urlmasvisto)
             <a href="../pi-grupo-8-proyecto/detallepelicula.html?id=${data.results[index].id}">
             <img class="fotobarbie" src="https://image.tmdb.org/t/p/w500/${data.results[index].poster_path}" alt="fotobarbie">
             </a>
-            <h4 class="h4barbie">${data.results[index].title}</h4>
+            <a href="../pi-grupo-8-proyecto/detalleserie.html?id=${data.results[index].id}"><h4 class="h4barbie">${data.results[index].title}</h4></a>
+            <a href="../pi-grupo-8-proyecto/detalleserie.html?id=${data.results[index].id}"><h3 class="h4barbie">${data.results[index].release_date}</h3></a>
             </article>`}
     })
 
@@ -56,7 +58,7 @@ fetch(urlmasvisto)
 
 //trabajando sobre lo mas valorado del home 
 
-let urlmasvalorado=`https://api.themoviedb.org/3/movie/upcoming?api_key=${api_key}`
+let urlmasvalorado=`https://api.themoviedb.org/3/tv/popular?api_key=${api_key}`
 
 fetch(urlmasvalorado)
     .then(function(response){
@@ -68,10 +70,11 @@ fetch(urlmasvalorado)
         let documento=document.querySelector(".masvaloradas")
         for (let index = 0; index < 5; index++) {
             documento.innerHTML+=`<article class="article">
-            <a href="../pi-grupo-8-proyecto/detallepelicula.html?id=${data.results[index].id}">
+            <a href="../pi-grupo-8-proyecto/detalleserie.html?id=${data.results[index].id}">
             <img class="fotobarbie" src="https://image.tmdb.org/t/p/w500/${data.results[index].poster_path}" alt="fotobarbie">
             </a>
-            <h4 class="h4barbie">${data.results[index].title}</h4>
+            <a href="../pi-grupo-8-proyecto/detalleserie.html?id=${data.results[index].id}"><h4 class="h4barbie">${data.results[index].name}</h4></a>
+            <a href="../pi-grupo-8-proyecto/detalleserie.html?id=${data.results[index].id}"><h3 class="h4barbie">${data.results[index].first_air_date}</h3></a>
             </article>`}
     })
 

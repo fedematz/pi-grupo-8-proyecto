@@ -1,48 +1,81 @@
-//trabajando sobre detalle serie
+//trabajando sobre detalle series
 let api_key = "e62f099aa015b1afedfca7df020f6e6b";
 let queryString = location.search;
 let queryStringObj = new URLSearchParams(queryString);
 let query= queryStringObj.get('id');
-let urldetallepelicula=`https://api.themoviedb.org/3/movie/${query}?api_key=${'e62f099aa015b1afedfca7df020f6e6b'}`
+let urldetalleserie=`https://api.themoviedb.org/3/tv/${query}?api_key=${api_key}`
 
-console.log(query);
 
-fetch(urldetallepelicula)
+/* recupero del DOM */
+let documento   = document.querySelector(".sectiondetalle");
+let boton       = document.querySelector(".recomendaciones");
+let nombre       = document.querySelector(".titulo");
+let estreno      = document.querySelector(".fecha");
+let duracion     = document.querySelector(".min");
+let genero       = document.querySelector(".genero");
+let sinopsis     = document.querySelector(".sinopsis");
+let imagen       = document.querySelector(".carteleradetalle");
+
+let container       = document.querySelector(".container-reco");
+let recomendaciones1Display       = document.querySelector(".recomenda");
+
+fetch(urldetalleserie)
     .then(function(response){
         return response.json()
     })
-
     .then(function(data){
         console.log(data)
-        let documento=document.querySelector(".sectiondetalle")
-
-            documento.innerHTML= `<img class="carteleradetalle" src="https://image.tmdb.org/t/p/w500/${data.poster_path}" alt="fotobarbie">
-            <h1>${data.title}</h1>
-            
-            <ul class="logosfav">
-                <li><i class="fa-solid fa-heart"></i></li>
-                <li><i class="fa-solid fa-play"></i></li>
-                <li><i class="fa-solid fa-clock"></i></li>
-            </ul>
+        let generos= "";
+        for (let index = 0; index < data.genres.length; index++) {
+            generos+=`${data.genres[index].name} `    
         
-
-            <p>${data.runtime} minutos</p>
-            <p>Fecha de estreno:${data.release_date}</p>
-
-            <p>Género: <a class="paraverenfamilia" href="./detallegenero.html">
-            ${data.genres}
-            
-            </a></p>
-         
-
-            <p>${data.overview}</p>
-            <form action="./favoritos.html" method="get">
-                <button type="button">Agregar a favoritos</button>
-            </form>`
-   
-     
+        
+        }
+        
+        nombre.innerText = data.name;
+        estreno.innerText = "Fecha de estreno: " + data.first_air_date;
+        duracion.innerText = "Duración: " + data.number_of_episodes + " capítulos";
+        genero.innerText = "Género: " + generos;
+        sinopsis.innerText = data.overview;
+        imagen.src = `https://image.tmdb.org/t/p/w500/${data.poster_path}`
     })
-
     .catch(function(error){
         console.log(error);
+    });
+
+    /* -----------------------------------> */
+
+    
+    boton.addEventListener("click",function() {
+            
+        let recomendaciones=`https://api.themoviedb.org/3/tv/${query}/recommendations?api_key=${api_key}`;
+
+        console.log(recomendaciones);
+
+        fetch(recomendaciones)
+            .then(function(response){
+                return response.json()
+            })
+
+            .then(function(data){
+                console.log(data)
+                container.style.display="block";
+                let informacion="";
+                for (let i = 0; i < 5; i++) {
+                    informacion+=`<article class="article">
+                    <img class="fotobarbie" src="https://image.tmdb.org/t/p/w500/${data.results[i].poster_path}" alt="fotobarbie">
+                    <h4 class="h4barbie">${data.results[i].name}</h4>
+                    </article`
+                    
+                }
+
+                recomendaciones1Display.innerHTML= informacion;
+            })
+
+            .catch(function(error){
+                console.log(error);
+            })
+       
+       
+        
     })
