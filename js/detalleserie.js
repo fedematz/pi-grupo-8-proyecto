@@ -4,7 +4,7 @@ let queryString     = location.search;
 let queryStringObj  = new URLSearchParams(queryString);
 let query           = queryStringObj.get('id');
 let urldetalleserie =`https://api.themoviedb.org/3/tv/${query}?api_key=${api_key}`
-let urltrailer2     = `https://api.themoviedb.org/3/tv/${query}/videos?api_key=${api_key}`
+
 
 
 /* recupero del DOM */
@@ -59,12 +59,16 @@ fetch(urldetalleserie)
                 console.log(data)
                 container.style.display = "block";
                 let informacion = "";
-                for (let i = 0; i < 5; i++) {
-                    informacion += `<article class="article">
-                    <img class="fotobarbie" src="https://image.tmdb.org/t/p/w500/${data.results[i].poster_path}" alt="fotobarbie">
-                    <h4 class="h4barbie">${data.results[i].name}</h4>
-                    </article`
-                    
+                if (data.results.length>0){
+                    for (let i = 0; i < 5; i++) {
+                        informacion += `<article class="article">
+                        <img class="fotobarbie" src="https://image.tmdb.org/t/p/w500/${data.results[i].poster_path}" alt="No hay foto disponible">
+                        <h4 class="h4barbie">${data.results[i].name}</h4>
+                        </article`
+                }    
+                }
+                else{
+                    alert("No hay recomendaciones")
                 }
 
                 recomendaciones1Display.innerHTML = informacion;
@@ -77,36 +81,4 @@ fetch(urldetalleserie)
        
         
     })
-    fetch(urltrailer2)
-    .then(function(response){
-        return response.json()
-    })
-    .then(function(data){
-        console.log(data)
-
-        if (data.results.length > 0) {
-            // Accedemos al primer video
-            let trailer2 = data.results[0];
-
-            // Construimos el enlace de YouTube para el video
-            let trailerserieURL = `https://www.youtube.com/embed/${trailer2.key}`;
-
-            // Construimos el contenido con el nombre, una miniatura y un enlace al video
-            let trailerserie = `<div>
-                            <p>Trailer</p>
-                               <iframe width="475" height="305" src="${trailerserieURL}" frameborder="0" allowfullscreen></iframe>
-                           </div>`;
-
-            // Mostramos el contenido en el elemento con la clase 'clasetrailer'
-            let claseTrailer = document.querySelector(".clasetrailer");
-            claseTrailer.innerHTML = trailerserie;
-        } else {
-            // Si no hay videos, mostramos un mensaje indicando que no hay trailers disponibles
-            let claseTrailer2 = document.querySelector(".clasetrailer");
-            claseTrailer2.innerHTML = "<p>No hay trailers disponibles</p>";
-        }
-    })
     
-    .catch(function(error){
-        console.log(error);
-    });

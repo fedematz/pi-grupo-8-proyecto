@@ -59,13 +59,17 @@ fetch(urldetallepelicula)
                 console.log(data)
                 container.style.display = "block";
                 let informacion = "";
-                for (let i = 0; i < 5; i++) {
-                    informacion += `<article class="article">
-                    <img class="fotobarbie" src="https://image.tmdb.org/t/p/w500/${data.results[i].poster_path}" alt="fotobarbie">
-                    <h4 class="h4barbie">${data.results[i].title}</h4>
-                    
-                    </article`
-                    
+                if (data.results.length>0){
+                    for (let i = 0; i < 5; i++) {
+                        informacion += `<article class="article">
+                        <img class="fotobarbie" src="https://image.tmdb.org/t/p/w500/${data.results[i].poster_path}" alt="fotobarbie">
+                        <h4 class="h4barbie">${data.results[i].title}</h4>
+                        
+                        </article`
+                    } 
+                }
+                else{
+                    alert("No hay recomendaciones")
                 }
 
                 recomendaciones1Display.innerHTML = informacion;
