@@ -1,6 +1,6 @@
-let api_key = "e62f099aa015b1afedfca7df020f6e6b";
-let urlgenerospelis=`https://api.themoviedb.org/3/genre/movie/list?api_key=${api_key}`
-let urlgeneroseries= `https://api.themoviedb.org/3/genre/tv/list?api_key=${api_key}`
+let api_key         = "e62f099aa015b1afedfca7df020f6e6b";
+let urlgenerospelis = `https://api.themoviedb.org/3/genre/movie/list?api_key=${api_key}`
+let urlgeneroseries = `https://api.themoviedb.org/3/genre/tv/list?api_key=${api_key}`
 
 fetch(urlgenerospelis)
     .then(function(response){
@@ -9,9 +9,9 @@ fetch(urlgenerospelis)
 
     .then(function(data){
         console.log(data)
-        let documento=document.querySelector(".sectionpeliculas")
+        let documento  = document.querySelector(".sectionpeliculas")
         for (let index = 1; index < 10; index++){
-            documento.innerHTML+=`<ul> 
+            documento.innerHTML += `<ul> 
             <li> <a class="listadetallegenero" href="./detallegenero.html">${data.genres[index].name}</a></li>
      
         </ul>`}
@@ -28,9 +28,9 @@ fetch(urlgeneroseries)
 
     .then(function(data){
         console.log(data)
-        let documento=document.querySelector(".sectionseries")
+        let documento  = document.querySelector(".sectionseries")
         for (let index = 1; index < 10; index++){
-            documento.innerHTML+=`<ul> 
+            documento.innerHTML += `<ul> 
             <li> <a class="listadetallegenero" href="./detallegenero.html">${data.genres[index].name}</a></li>
      
         </ul>`}

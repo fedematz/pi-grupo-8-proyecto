@@ -1,5 +1,5 @@
-let api_key = "e62f099aa015b1afedfca7df020f6e6b";
-let urldetallegenero=`https://api.themoviedb.org/3/discover/movie?api_key=${api_key}&with_genres=`
+let api_key          = "e62f099aa015b1afedfca7df020f6e6b";
+let urldetallegenero =`https://api.themoviedb.org/3/discover/movie?api_key=${api_key}&with_genres=`
 
 fetch(urldetallegenero)
     .then(function(response){
