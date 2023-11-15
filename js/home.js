@@ -3,6 +3,7 @@ let api_key = "e62f099aa015b1afedfca7df020f6e6b";
 
 
 //trabajando sobre peliculas mas populares del home 
+
 let urlpeliculasmaspopulares = `https://api.themoviedb.org/3/movie/popular?api_key=${api_key}`
 
 fetch(urlpeliculasmaspopulares)
@@ -18,8 +19,8 @@ fetch(urlpeliculasmaspopulares)
             <a href="../pi-grupo-8-proyecto/detallepelicula.html?id=${data.results[index].id}">
             <img class="fotobarbie" src="https://image.tmdb.org/t/p/w500/${data.results[index].poster_path}" alt="fotobarbie">
             </a>
-            <a href="../pi-grupo-8-proyecto/detalleserie.html?id=${data.results[index].id}"><h4 class="h4barbie">${data.results[index].title}</h4></a>
-            <a href="../pi-grupo-8-proyecto/detalleserie.html?id=${data.results[index].id}"><h3 class="h4barbie">${data.results[index].release_date}</h3></a>
+            <a class="primera" href="../pi-grupo-8-proyecto/detalleserie.html?id=${data.results[index].id}"><h4 class="h4barbie">${data.results[index].title}</h4></a>
+            <a class="segundo" href="../pi-grupo-8-proyecto/detalleserie.html?id=${data.results[index].id}"><h3 class="h4barbie">${data.results[index].release_date}</h3></a>
             </article>`}
     })
 
@@ -44,8 +45,8 @@ fetch(urlmasvisto)
             <a href="../pi-grupo-8-proyecto/detallepelicula.html?id=${data.results[index].id}">
             <img class="fotobarbie" src="https://image.tmdb.org/t/p/w500/${data.results[index].poster_path}" alt="fotobarbie">
             </a>
-            <a href="../pi-grupo-8-proyecto/detalleserie.html?id=${data.results[index].id}"><h4 class="h4barbie">${data.results[index].title}</h4></a>
-            <a href="../pi-grupo-8-proyecto/detalleserie.html?id=${data.results[index].id}"><h3 class="h4barbie">${data.results[index].release_date}</h3></a>
+            <a class="primera" href="../pi-grupo-8-proyecto/detalleserie.html?id=${data.results[index].id}"><h4 class="h4barbie">${data.results[index].title}</h4></a>
+            <a class="segundo" href="../pi-grupo-8-proyecto/detalleserie.html?id=${data.results[index].id}"><h3 class="h4barbie">${data.results[index].release_date}</h3></a>
             </article>`}
     })
 
@@ -71,8 +72,8 @@ fetch(urlmasvalorado)
             <a href="../pi-grupo-8-proyecto/detalleserie.html?id=${data.results[index].id}">
             <img class="fotobarbie" src="https://image.tmdb.org/t/p/w500/${data.results[index].poster_path}" alt="fotobarbie">
             </a>
-            <a href="../pi-grupo-8-proyecto/detalleserie.html?id=${data.results[index].id}"><h4 class="h4barbie">${data.results[index].name}</h4></a>
-            <a href="../pi-grupo-8-proyecto/detalleserie.html?id=${data.results[index].id}"><h3 class="h4barbie">${data.results[index].first_air_date}</h3></a>
+            <a class="primera" href="../pi-grupo-8-proyecto/detalleserie.html?id=${data.results[index].id}"><h4 class="h4barbie">${data.results[index].name}</h4></a>
+            <a class="segundo" href="../pi-grupo-8-proyecto/detalleserie.html?id=${data.results[index].id}"><h3 class="h4barbie">${data.results[index].first_air_date}</h3></a>
             </article>`}
     })
 

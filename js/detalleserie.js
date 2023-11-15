@@ -28,7 +28,7 @@ fetch(urldetalleserie)
         console.log(data)
         let generos= "";
         for (let index = 0; index < data.genres.length; index++) {
-            generos += `<a href="detallegenero.html?id=${data.genres[index].id}">${data.genres[index].name}</a> `    
+            generos += `<a class="geneross" href="detallegenero.html?id=${data.genres[index].id}">${data.genres[index].name}</a> `    
         
         
         }
