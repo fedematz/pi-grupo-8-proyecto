@@ -180,6 +180,16 @@
     height: 250px;
 }
 
+.peliculas{
+    display: flex;
+    flex-direction: row;
+}
+
+.h4barbie{
+    
+    color: white;
+}
+
 /* --------- FOOTER --------- */
 
 /* --------- todo el footer --------- */
