@@ -31,7 +31,7 @@ fetch(urlgeneroseries)
         let documento  = document.querySelector(".sectionseries")
         for (let index = 1; index < 10; index++){
             documento.innerHTML += `<ul> 
-            <li> <a class="listadetallegenero" href="./detallegenero.html">${data.genres[index].name}</a></li>
+            <li> <a class="listadetallegenero" href="./detallegenero.html?idgenero=${data.genres[index].id}">${data.genres[index].name}</a></li>
      
         </ul>`}
     })

@@ -306,6 +306,11 @@
     .fotobarbie {
         height: 150px;
     }
+     /* -- LOADER -- */
+     .loader {
+        display: block;
+        margin: 5px;
+    }
    
     /* -- abarca todas las palabras de generos en generos.html -- */
     .sectionpeliculas {
@@ -340,7 +345,8 @@
     .maingen{
         height: 170vh;
         }
-    
+
+
     /* --------- FOOTER --------- */
         
     /* --------- foto logo digital a la derecha --------- */

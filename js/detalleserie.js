@@ -1,22 +1,22 @@
-//trabajando sobre detalle series
+//trabajando sobre detalle serie
 let api_key         = "e62f099aa015b1afedfca7df020f6e6b";
 let queryString     = location.search;
 let queryStringObj  = new URLSearchParams(queryString);
 let query           = queryStringObj.get('id');
 let urldetalleserie =`https://api.themoviedb.org/3/tv/${query}?api_key=${api_key}`
+let urlReviews_series = `https://api.themoviedb.org/3/tv/${query}/reviews?api_key=${api_key}`;
 
 
 
 /* recupero del DOM */
-let documento    = document.querySelector(".sectiondetalle");
-let boton        = document.querySelector(".recomendaciones");
-let nombre       = document.querySelector(".titulo");
-let estreno      = document.querySelector(".fecha");
-let duracion     = document.querySelector(".min");
-let genero       = document.querySelector(".genero");
-let sinopsis     = document.querySelector(".sinopsis");
-let imagen       = document.querySelector(".carteleradetalle");
-
+let documento                = document.querySelector(".sectiondetalle");
+let boton                    = document.querySelector(".recomendaciones");
+let nombre                   = document.querySelector(".titulo");
+let estreno                  = document.querySelector(".fecha");
+let duracion                 = document.querySelector(".min");
+let genero                   = document.querySelector(".genero");
+let sinopsis                 = document.querySelector(".sinopsis");
+let imagen                   = document.querySelector(".carteleradetalle");
 let container                = document.querySelector(".container-reco");
 let recomendaciones1Display  = document.querySelector(".recomenda");
 
@@ -28,7 +28,7 @@ fetch(urldetalleserie)
         console.log(data)
         let generos= "";
         for (let index = 0; index < data.genres.length; index++) {
-            generos += `<a class="geneross" href="detallegenero.html?id=${data.genres[index].id}">${data.genres[index].name}</a> `    
+            generos += `<a class="geneross" href="detallegenero.html?id=${data.genres[index].id}"> ${data.genres[index].name}</a> `    
         
         
         }
@@ -81,4 +81,42 @@ fetch(urldetalleserie)
        
         
     })
+
+//REVIEWS
+fetch(urlReviews_series)
+    .then(function (response) {
+        return response.json();
+    })
+    .then(function (data) {
+        console.log(data);
+
+
+        if (data.results.length > 0) {
+            let reviewsContainer = document.querySelector(".reviews");
+            let reviewsHTML = "<h2>Comentarios de Usuarios</h2>";
+
+        
+            for (let i = 0; i < data.results.length; i++) {
+                const review = data.results[i];
+                reviewsHTML += `
+                    <div class="review">
+                        <p><strong>Autor:</strong> ${review.author}</p>
+                        <p><strong>Comentario:</strong> ${review.content}</p>
+                    </div>
+                `;
+            }
+
+            reviewsContainer.innerHTML = reviewsHTML;
+        } else {
+            
+            let reviewsContainer = document.querySelector(".reviews");
+            reviewsContainer.innerHTML = "<p>No hay comentarios disponibles.</p>";
+        }
+    })
+    .catch(function (error) {
+        console.log(error);
+    });
+
+
+
     

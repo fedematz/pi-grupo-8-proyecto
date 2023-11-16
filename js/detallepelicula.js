@@ -5,6 +5,8 @@ let queryStringObj     = new URLSearchParams(queryString);
 let query              = queryStringObj.get('id');
 let urldetallepelicula = `https://api.themoviedb.org/3/movie/${query}?api_key=${api_key}`
 let urltrailer         = `https://api.themoviedb.org/3/movie/${query}/videos?api_key=${api_key}`
+let idgenero               = queryStringObj.get('id'); 
+let urlReviews = `https://api.themoviedb.org/3/movie/${query}/reviews?api_key=${api_key}`;
 
 /* recupero del DOM */
 let documento                = document.querySelector(".sectiondetalle");
@@ -62,7 +64,7 @@ fetch(urldetallepelicula)
                 if (data.results.length>0){
                     for (let i = 0; i < 5; i++) {
                         informacion += `<article class="article">
-                        <img class="fotobarbie" src="https://image.tmdb.org/t/p/w500/${data.results[i].poster_path}" alt="fotobarbie">
+                        <img class="fotobarbie" src="https://image.tmdb.org/t/p/w500/${data.results[i].poster_path}" alt="Foto no disponible">
                         <h4 class="h4barbie">${data.results[i].title}</h4>
                         
                         </article`
@@ -80,7 +82,7 @@ fetch(urldetallepelicula)
             })
         })
 
-
+//TRAILER
 fetch(urltrailer)
     .then(function(response){
         return response.json()
@@ -114,3 +116,40 @@ fetch(urltrailer)
     .catch(function(error){
         console.log(error);
     });
+
+//REVIEWS
+fetch(urlReviews)
+    .then(function (response) {
+        return response.json();
+    })
+    .then(function (data) {
+        console.log(data);
+
+
+        if (data.results.length > 0) {
+            let reviewsContainer = document.querySelector(".reviews");
+            let reviewsHTML = "<h2>Comentarios de Usuarios</h2>";
+
+        
+            for (let i = 0; i < data.results.length; i++) {
+                const review = data.results[i];
+                reviewsHTML += `
+                    <div class="review">
+                        <p><strong>Autor:</strong> ${review.author}</p>
+                        <p><strong>Comentario:</strong> ${review.content}</p>
+                    </div>
+                `;
+            }
+
+            reviewsContainer.innerHTML = reviewsHTML;
+        } else {
+            
+            let reviewsContainer = document.querySelector(".reviews");
+            reviewsContainer.innerHTML = "<p>No hay comentarios disponibles.</p>";
+        }
+    })
+    .catch(function (error) {
+        console.log(error);
+    });
+
+

@@ -43,8 +43,8 @@
     <!-- MAIN  -->
     <main class="detalle">
         <section class="sectiondetalle">
-            <img class="carteleradetalle" src="https://image.tmdb.org/t/p/w500/${data.poster_path}" alt="fotobarbie">
-            <h1 class="titulo">${data.title}</h1>
+            <img class="carteleradetalle" src="https://image.tmdb.org/t/p/w500/${data.poster_path}" alt="Foto no disponible">
+            <h1 class="titulo"></h1>
             
             <ul class="logosfav">
                 <li><i class="fa-solid fa-heart"></i></li>
@@ -53,7 +53,7 @@
             </ul>
         
             
-            <p class="min">${data.runtime} minutos</p>
+            <p class="min"> minutos</p>
             <p class="fecha">Fecha de estreno: </p>
 
             <p class="genero">Género: <a class="paraverenfamilia" href="./detallegenero.html">
@@ -62,10 +62,10 @@
             </a></p>
          
 
-            <p class="sinopsis">${data.overview}</p>
+            <p class="sinopsis"></p>
             <form action="./favoritos.html" method="get">
                 <button type="button">Agregar a favoritos</button>
-                <button class="recomendaciones" type="button">ver recomendaciones</button>
+                <button class="recomendaciones" type="button">Ver recomendaciones</button>
             </form>
             <span class="reco"></span>
         </section>
@@ -80,6 +80,8 @@
         <section>
             <p class="clasetrailer">Trailer: </p>
         </section>
+
+        <div class="reviews"></div>
 
 
     </main>
