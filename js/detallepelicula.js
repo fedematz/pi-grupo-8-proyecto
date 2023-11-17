@@ -19,7 +19,7 @@ let imagen                   = document.querySelector(".carteleradetalle");
 let container                = document.querySelector(".container-reco");
 let recomendaciones1Display  = document.querySelector(".recomenda");
 let reseñas1Display          = document.querySelector(".reseñass");
-let container_reviews        = document.querySelector(".container-reseñas");;
+let container_reviews        = document.querySelector(".container-reseñas");
 
 
 fetch(urldetallepelicula)
@@ -30,7 +30,7 @@ fetch(urldetallepelicula)
         console.log(data)
         let generos    = "";
         for (let index = 0; index < data.genres.length; index++) {
-            generos   += `<a class="geneross" href="detallegenero.html?id=${data.genres[index].id}">${data.genres[index].name}</a> `    
+            generos   += `<a class="geneross" href="detallegenero.html?id=${data.genres[index].id}&name=${data.genres[index].name}">${data.genres[index].name}</a> `    
         
         
         }
@@ -47,41 +47,43 @@ fetch(urldetallepelicula)
         console.log(error);
     });
     
- boton.addEventListener("click",function() {
-            
-        let recomendaciones = `https://api.themoviedb.org/3/movie/${query}/recommendations?api_key=${api_key}`;
 
-        console.log(recomendaciones);
-
-        fetch(recomendaciones)
-            .then(function(response){
-                return response.json()
-            })
-
-            .then(function(data){
-                console.log(data)
-                container.style.display = "block";
-                let informacion = "";
-                if (data.results.length>0){
+boton.addEventListener("click", function () {
+    let recomendaciones = `https://api.themoviedb.org/3/movie/${query}/recommendations?api_key=${api_key}`;
+        
+    console.log(recomendaciones);
+        
+            fetch(recomendaciones)
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(function (data) {
+                    console.log(data);
+                    container.style.display = "block";
+                    let informacion = "";
+        
                     for (let i = 0; i < 5; i++) {
-                        informacion += `<article class="article">
-                        <img class="fotobarbie" src="https://image.tmdb.org/t/p/w500/${data.results[i].poster_path}" alt="Foto no disponible">
-                        <h4 class="h4barbie">${data.results[i].title}</h4>
                         
-                        </article`
-                    } 
-                }
-                else{
-                    alert("No hay recomendaciones")
-                }
-
-                recomendaciones1Display.innerHTML = informacion;
-            })
-
-            .catch(function(error){
-                console.log(error);
-            })
-        })
+                        if (data.results[i].poster_path) {
+                            informacion += `<article class="article">
+                                <img class="fotobarbie" src="https://image.tmdb.org/t/p/w500/${data.results[i].poster_path}" alt="Foto no disponible">
+                                <h4 class="h4barbie">${data.results[i].title}</h4>
+                            </article>`;
+                        }
+                    }
+        
+                    
+                    if (informacion === "") {
+                        alert("No hay recomendaciones");
+                    }
+        
+                    recomendaciones1Display.innerHTML = informacion;
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+        });
+        
 
 //TRAILER
 fetch(urltrailer)
@@ -133,9 +135,9 @@ fetch(reseñas)
     })
     .then(function (data) {
         console.log(data);
-        container_reviews.style.display = "block";
         let comentarios = "";
         if (data.results.length > 0) {
+            container_reviews.style.display = "block";
             for (let i = 0; i < data.results.length; i++) {
                 const review = data.results[i];
                 comentarios += `<div class="review">

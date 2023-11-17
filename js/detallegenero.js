@@ -1,10 +1,13 @@
-let api_key                = "e62f099aa015b1afedfca7df020f6e6b";
-let queryString            = location.search;
-let queryStringObj         = new URLSearchParams(queryString);
-let idgenero               = queryStringObj.get('idgenero');
-let nombre                 = queryStringObj.get('name'); 
-let urldetallegeneropeli   = `https://api.themoviedb.org/3/discover/movie?api_key=${api_key}&with_genres=${idgenero}`
-let urldetallegeneroserie  = `https://api.themoviedb.org/3/discover/tv?api_key=${api_key}&with_genres=${idgenero}`
+let api_key = "e62f099aa015b1afedfca7df020f6e6b";
+let queryString = location.search;
+let queryStringObj = new URLSearchParams(queryString);
+let idgenero = queryStringObj.get('id');
+let nombre = queryStringObj.get('name');
+let urldetallegeneropeli = `https://api.themoviedb.org/3/discover/movie?api_key=${api_key}&with_genres=${idgenero}`;
+let urldetallegeneroserie = `https://api.themoviedb.org/3/discover/tv?api_key=${api_key}&with_genres=${idgenero}`;
+let detalleGeneroTitulo = document.querySelector(".geneross");
+detalleGeneroTitulo.innerText = `Detalle genero: ${nombre}`;
+
 
 fetch(urldetallegeneropeli)
     .then(function(response){
@@ -28,7 +31,7 @@ fetch(urldetallegeneropeli)
             
         };
         let detallegenero        = document.querySelector(".peliculas");
-        detallegenero.innerHTML = contenido;      
+        detallegenero.innerHTML  = contenido;  
 
     })
 

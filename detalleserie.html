@@ -59,6 +59,7 @@
                 
                 <form action="./favoritos.html" method="get">
                     <button class="recomendaciones" type="button">ver recomendaciones</button>
+                    <button class="botonreseñas" type="button">Ver más</button> 
                 </form>
                 <span class="reco"></span>
             </section>
@@ -71,6 +72,14 @@
             </section>
 
             <div class="reviews"></div>
+
+            <section class="container-reseñas" style="display: none;">
+                <h4>No hay reseñas disponibles</h4> <!-- lo definimos así sin usar condicional en js porque ya se sabe que para series no hay reseñas, la api de reviews es solo con peliculas  -->
+                <section class="reseñasserie">
+    
+                </section>
+    
+            </section>
     
         </main>
 

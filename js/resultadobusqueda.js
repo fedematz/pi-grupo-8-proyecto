@@ -3,10 +3,8 @@ let api_key            = "e62f099aa015b1afedfca7df020f6e6b";
 let queryString        = location.search;
 let queryStringObj     = new URLSearchParams(queryString);
 let querybuscar        = queryStringObj.get('buscar');
-
 let urlBusqueda        = `https://api.themoviedb.org/3/search/movie?api_key=${api_key}&query=${querybuscar}`;
-
-resultados.innerHTML = `'<img class="loader" src="../pi-grupo-8-proyecto/img/grey-9026_128.gif" alt="Cargando...">'`; 
+resultados.innerHTML   = `'<img class="loader" src="../pi-grupo-8-proyecto/img/grey-9026_128.gif" alt="Cargando...">'`; 
 
 fetch(urlBusqueda)
     .then(function(response){
