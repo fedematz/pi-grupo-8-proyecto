@@ -3,10 +3,9 @@ let api_key            = "e62f099aa015b1afedfca7df020f6e6b";
 let queryString        = location.search;
 let queryStringObj     = new URLSearchParams(queryString);
 let query              = queryStringObj.get('id');
-let urldetallepelicula = `https://api.themoviedb.org/3/movie/${query}?api_key=${api_key}`
-let urltrailer         = `https://api.themoviedb.org/3/movie/${query}/videos?api_key=${api_key}`
-let idgenero               = queryStringObj.get('id'); 
-let urlReviews = `https://api.themoviedb.org/3/movie/${query}/reviews?api_key=${api_key}`;
+let urldetallepelicula = `https://api.themoviedb.org/3/movie/${query}?api_key=${api_key}`;
+let urltrailer         = `https://api.themoviedb.org/3/movie/${query}/videos?api_key=${api_key}`;
+let urlReviews         = `https://api.themoviedb.org/3/movie/${query}/reviews?api_key=${api_key}`;
 
 /* recupero del DOM */
 let documento                = document.querySelector(".sectiondetalle");
@@ -19,6 +18,8 @@ let sinopsis                 = document.querySelector(".sinopsis");
 let imagen                   = document.querySelector(".carteleradetalle");
 let container                = document.querySelector(".container-reco");
 let recomendaciones1Display  = document.querySelector(".recomenda");
+let reseñas1Display          = document.querySelector(".reseñass");
+let container_reviews        = document.querySelector(".container-reseñas");;
 
 
 fetch(urldetallepelicula)
@@ -117,39 +118,38 @@ fetch(urltrailer)
         console.log(error);
     });
 
-//REVIEWS
-fetch(urlReviews)
+
+   
+// VER MÁS
+let botonreseñas = document.querySelector(".botonreseñas");
+
+botonreseñas.addEventListener("click", function () {
+let reseñas = `https://api.themoviedb.org/3/movie/${query}/reviews?api_key=${api_key}`;
+console.log(reseñas);
+
+fetch(reseñas)
     .then(function (response) {
         return response.json();
     })
     .then(function (data) {
         console.log(data);
-
-
+        container_reviews.style.display = "block";
+        let comentarios = "";
         if (data.results.length > 0) {
-            let reviewsContainer = document.querySelector(".reviews");
-            let reviewsHTML = "<h2>Comentarios de Usuarios</h2>";
-
-        
             for (let i = 0; i < data.results.length; i++) {
                 const review = data.results[i];
-                reviewsHTML += `
-                    <div class="review">
-                        <p><strong>Autor:</strong> ${review.author}</p>
-                        <p><strong>Comentario:</strong> ${review.content}</p>
-                    </div>
-                `;
+                comentarios += `<div class="review">
+                    <p><strong>Autor:</strong> ${review.author}</p>
+                    <p><strong>Comentario:</strong> ${review.content}</p>
+                </div>`;
             }
-
-            reviewsContainer.innerHTML = reviewsHTML;
         } else {
-            
-            let reviewsContainer = document.querySelector(".reviews");
-            reviewsContainer.innerHTML = "<p>No hay comentarios disponibles.</p>";
+            alert("No hay reseñas");
         }
+
+        reseñas1Display.innerHTML = comentarios;
     })
     .catch(function (error) {
         console.log(error);
     });
-
-
+});

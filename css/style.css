@@ -60,7 +60,11 @@
     justify-content: flex-start;
     
 }
-
+/* --------- ver más --------- */
+.reviews-container {
+    display: none;
+}
+/* --------------- */ 
 .lomasvisto { 
     display: flex;
     flex-direction: row;
@@ -306,10 +310,10 @@
     .fotobarbie {
         height: 150px;
     }
-     /* -- LOADER -- */
+     /* -- loader en resultado busqueda -- */
      .loader {
         display: block;
-        margin: 5px;
+        margin: auto; 
     }
    
     /* -- abarca todas las palabras de generos en generos.html -- */
