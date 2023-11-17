@@ -20,13 +20,20 @@ fetch(urlBusqueda)
         }
         else{
             resultados.innerHTML = `Resultado para: ${querybuscar}`
+        
         for (let index = 0; index < 5; index++) {
-            resultados.innerHTML +=`<article class="article">
-            <a href="./detallepelicula.html?id=${data.results[index].id}">
-            <img class="fotobarbie fotonewbarbie" src="https://image.tmdb.org/t/p/w500/${data.results[index].poster_path}" alt="">
-            <h4 class="h5barbie">${data.results[index].title}</h4>
-            </a> 
-            </article>`
+            if (data.results[index].poster_path!=null) {
+                resultados.innerHTML +=`<article class="article">
+                <a href="./detallepelicula.html?id=${data.results[index].id}">
+                <img class="fotobarbie fotonewbarbie" src="https://image.tmdb.org/t/p/w500/${data.results[index].poster_path}" alt="">
+                <h4 class="h5barbie">${data.results[index].title}</h4>
+                </a> 
+                </article>`    
+                
+            }
+            else{
+
+            }
             
         }
          

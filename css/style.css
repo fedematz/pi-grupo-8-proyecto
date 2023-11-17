@@ -188,10 +188,9 @@
 .peliculas{
     display: flex;
     flex-direction: row;
+    height: 100vh;
+    align-items: center;
 }
-
-
-    
 
 .primera{
     text-decoration: none;

@@ -19,8 +19,8 @@ fetch(urlpeliculasmaspopulares)
             <a href="../pi-grupo-8-proyecto/detallepelicula.html?id=${data.results[index].id}">
             <img class="fotobarbie" src="https://image.tmdb.org/t/p/w500/${data.results[index].poster_path}" alt="fotobarbie">
             </a>
-            <a class="primera" href="../pi-grupo-8-proyecto/detalleserie.html?id=${data.results[index].id}"><h4 class="h4barbie">${data.results[index].title}</h4></a>
-            <a class="segundo" href="../pi-grupo-8-proyecto/detalleserie.html?id=${data.results[index].id}"><h3 class="h4barbie">${data.results[index].release_date}</h3></a>
+            <a class="primera" href="../pi-grupo-8-proyecto/detallepelicula.html?id=${data.results[index].id}"><h4 class="h4barbie">${data.results[index].title}</h4></a>
+            <a class="segundo" href="../pi-grupo-8-proyecto/detallepelicula.html?id=${data.results[index].id}"><h3 class="h4barbie">${data.results[index].release_date}</h3></a>
             </article>`}
     })
 
@@ -32,30 +32,6 @@ fetch(urlpeliculasmaspopulares)
  
 let urlmasvisto = `https://api.themoviedb.org/3/movie/top_rated?api_key=${api_key}`
 
-/*
-fetch(urlmasvisto)
-    .then(function(response){
-        return response.json()
-    })
-
-    .then(function(data){
-        console.log(data)
-        let documento  = document.querySelector(".lomasvisto")
-        for (let index = 0; index < 5; index++) {
-            documento.innerHTML += `<article class="article">
-            <a href="../pi-grupo-8-proyecto/detallepelicula.html?id=${data.results[index].id}">
-            <img class="fotobarbie" src="https://image.tmdb.org/t/p/w500/${data.results[index].poster_path}" alt="fotobarbie">
-            </a>
-            <a class="primera" href="../pi-grupo-8-proyecto/detalleserie.html?id=${data.results[index].id}"><h4 class="h4barbie">${data.results[index].title}</h4></a>
-            <a class="segundo" href="../pi-grupo-8-proyecto/detalleserie.html?id=${data.results[index].id}"><h3 class="h4barbie">${data.results[index].release_date}</h3></a>
-            </article>`}
-    })
-
-    .catch(function(error){
-        console.log(error);
-    })
-
-*/
 fetch(urlmasvisto)
     .then(function(response){
         return response.json()
